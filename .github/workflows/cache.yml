@@ -1,0 +1,35 @@
+name: CI with Cache
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Cache dependencies
+      - name: prime-cache-bea82af
+        id: cache-step
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm       # Path to cache (for Node.js example)
+          key: cache-bea82af
+          restore-keys: |
+            cache-bea82af
+
+      - name: Show cache result
+        run: |
+          if [ "${{ steps.cache-step.outputs.cache-hit }}" = "true" ]; then
+            echo "Cache hit!"
+          else
+            echo "Cache miss!"
+          fi
+
+      - name: Install dependencies
+        run: npm install
