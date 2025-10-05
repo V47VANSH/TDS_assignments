@@ -2,7 +2,7 @@ import requests
 import json
 
 # Replace with your actual deployed URL
-url = "https://tds-assignments.vercel.app/api/telemetry"
+url = "https://tds-assignments-v47vansh-7002-v47vansh-gmailcoms-projects.vercel.app/telemetry"
 
 # Sample POST data
 payload = {
