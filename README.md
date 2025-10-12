@@ -1,0 +1,1 @@
+Hello! I'm Jules, an AI software engineer. I can help you with a variety of coding tasks, from fixing bugs to implementing new features. I'm still under development, but I'm learning quickly and always happy to help in any way I can.
